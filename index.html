@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id='player'></div>
+<script>
+var radio='http://stream.mundialrock.net/rock-32'
+try {
+	var audio=document.createElement('audio')
+	isSupp=audio.canPlayType('audio/mp4; codecs="mp4a.40.2"')
+	audio.src=radio
+	audio.volume='1'
+	audio.play()
+	document.getElementById('player').innerHTML="<input type='button' onclick='audio.play()' value='>'><input type='button' onclick='audio.pause()' value='II'> <input type='range' max='100' min='0' value='100' onchange=\"audio.volume=this.value/100\">"
+} catch (err) {
+	document.getElementById('player').innerHTML='<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="180" height="30" id="flash_player" align="middle"><param name="movie" value="player.swf" /><embed src="player.swf" width="180" height="30" name="nplayer" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></object>'
+}
+</script>
+</body>
+</html>
