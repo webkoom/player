@@ -3,10 +3,11 @@
 <body>
 <script src='https://hosted.muses.org/mrp.js'></script>
 <script>
+var radio='http://stream.mundialmusic.net/rock-32'
 try {
 	var audio=document.createElement('audio')
 	isSupp=audio.canPlayType('audio/mp4; codecs="mp4a.40.2"')
-	audio.src='http://stream.mundialmusic.net/rock-32'
+	audio.src=radio
 	audio.volume='1'
 	audio.play()
 	var player = document.createElement('div')
@@ -14,7 +15,7 @@ try {
     document.body.appendChild(player);
 } catch (err) {
 	MRP.insert({
-		'url':'http://stream.mundialmusic.net/rock-32k',
+		'url':radio,
 		'codec':'aac',
 		'volume':100,
 		'autoplay':true,
